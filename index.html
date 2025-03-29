@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, orientation=landscape">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>انعامی نظام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('https://www.sbp.org.pk/finance/images/1000/big.JPG') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-left: 20px;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+            margin-left: 0;
+            padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            background: #ff5733;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .highlight {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">یہ ویڈیو دیکھو اور کماؤ 1000 روپے ابھی</div>
+        <div class="content">
+            <div class="highlight">
+                ویڈیو دیکھیں تاکہ آپ اپنے ایزی پیسہ اکاؤنٹ میں 1000 حاصل کر سکیں۔<br>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Lg_QP3BXckE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+                یہ لنک 5 لوگوں کے ساتھ شیئر کریں۔<br>
+                <button type="button" onclick="shareOnWhatsApp()" style="background-color: #007bff;">📤 لنک شیئر کریں</button>
+            </div>
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://www.youtube.com/@Skillsider916?sub_confirmation=1" target="_blank">
+                    چینل کو سبسکرائب کریں<br>
+                    <button style="background-color: red; color: white;">🔔 Subscribe Now | ابھی سبسکرائب کریں</button>
+                </a>
+            </div>
+            <h3 style="color: #007bff;">اپنی تفصیلات درج کریں</h3>
+            <form id="rewardForm">
+                <label for="account">اپنا ایزی پیسہ/جاز کیش/بینک نمبر درج کریں:</label>
+                <input type="text" id="account" required placeholder="اپنا اکاؤنٹ نمبر درج کریں">
+                <p>آپ ابھی 1000 نکلوا رہے ہیں۔</p>
+                <button type="button" onclick="submitForm()">💸 رقم نکلوائیں</button>
+            </form>
+            <p id="message"></p>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            document.getElementById('message').innerText = 'آپ کا درخواست موصول ہو چکا ہے!';
+            alert("آپ کی درخواست کامیابی سے جمع کر دی گئی ہے!");
+        }
+        function shareOnWhatsApp() {
+            const pageUrl = window.location.href;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('یہ دیکھو! 1000 روپے حاصل کرنے کا موقع: ' + pageUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
